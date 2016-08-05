@@ -1,6 +1,5 @@
 package com.garage.core.config;
 
-import com.garage.core.migrator.CassandraMigrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,13 +36,4 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         return new BasicCassandraMappingContext();
     }
 
-    @Bean
-    CassandraMigrator migrator() {
-        CassandraMigrator migrator = new CassandraMigrator();
-        migrator.setContactPoints(environment.getProperty("cassandra.contactpoints"));
-        migrator.setPort(Integer.parseInt(environment.getProperty("cassandra.port")));
-        migrator.setKeyspace(environment.getProperty("cassandra.keyspace"));
-        migrator.setSchemaPath("classpath*:migrations");
-        return migrator;
-    }
 }
