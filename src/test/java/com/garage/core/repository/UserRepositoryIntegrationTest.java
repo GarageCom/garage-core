@@ -43,7 +43,6 @@ public class UserRepositoryIntegrationTest {
         final Session session = cluster.connect();
         session.execute(KEYSPACE_CREATION_QUERY);
         session.execute(KEYSPACE_ACTIVATE_QUERY);
-//        Thread.sleep(5000);
     }
 
     @AfterClass

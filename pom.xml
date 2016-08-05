@@ -104,11 +104,12 @@
             <plugin>
                 <groupId>com.garage.tuna</groupId>
                 <artifactId>tuna-maven-plugin</artifactId>
-                <version>0.1-SNAPSHOT</version>
+                <version>0.2-SNAPSHOT</version>
                 <configuration>
                     <contactpoints>127.0.0.1</contactpoints>
                     <port>9042</port>
                     <keyspace>garage_development</keyspace>
+                    <migrationPath>src/main/resources/tuna/migrations</migrationPath>
                 </configuration>
             </plugin>
         </plugins>
